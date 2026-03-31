@@ -7,5 +7,6 @@ venv/
 # Environment
 .env
 
-# Database
-*.db
+# Frontend (Node/Next)
+node_modules
+.next

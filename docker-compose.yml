@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # 1. The Database
+  db:
+    image: postgres:15-alpine
+    container_name: synapse-db
+    environment:
+      POSTGRES_USER: synapse_user
+      POSTGRES_PASSWORD: synapse_pass
+      POSTGRES_DB: synapse_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U synapse_user -d synapse_db"]
+      interval: 5s
+      retries: 5
+
+  # 2. The Backend (Python)
+  backend:
+    build: ./backend
+    container_name: synapse-backend
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://synapse_user:synapse_pass@db:5432/synapse_db
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # 3. The Frontend (Next.js)
+  frontend:
+    build: ./frontend
+    container_name: synapse-frontend
+    command: pnpm start
+    ports:
+      - "3000:3000"
+    environment:
+      # NEXT_PUBLIC_ makes this variable available in the browser
+      # NOTE: We use 'backend' because that is the docker service name
+      - NEXT_PUBLIC_API_URL=http://backend:8000
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

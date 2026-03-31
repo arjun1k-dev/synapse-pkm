@@ -1,7 +1,9 @@
-from sqlalchemy import String, Text, DateTime, ForeignKey, Enum as SQLEnum
+from sqlalchemy import String, Text, DateTime, ForeignKey, Enum as SQLEnum 
+from sqlalchemy.dialects.postgresql import TSVECTOR as TSVector
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 from backend.database import Base
 from datetime import datetime
+from typing import Optional
 import uuid
 import enum
 
@@ -20,6 +22,9 @@ class Node(Base):
     node_type: Mapped[NodeType] = mapped_column(SQLEnum(NodeType), default=NodeType.NOTE)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
     
+    #NEW : Search Vector for Full Text Search
+    search_vector: Mapped[Optional[str]] = mapped_column(TSVector , nullable=True)
+
     # Graph relationships
     edges_out = relationship("Edge", foreign_keys="[Edge.source_id]", back_populates="source_node")
     edges_in = relationship("Edge", foreign_keys="[Edge.target_id]", back_populates="target_node")
