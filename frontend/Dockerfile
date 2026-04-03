@@ -10,6 +10,10 @@ COPY package.json pnpm-lock.yaml ./
 RUN npm install -g pnpm
 RUN pnpm install --frozen-lockfile
 
+#Build Argument
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=SNEXT_PUBLIC_API_URL
+
 # Copy source code
 COPY . .
 

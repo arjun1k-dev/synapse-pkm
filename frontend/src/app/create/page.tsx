@@ -172,7 +172,7 @@ export default function CreateNode() {
               {imageUrl && (
                 <div>
                   <p className="text-xs text-gray-400 mb-1">Detected Thumbnail:</p>
-                  <img src={imageUrl} alt="Preview" className="w-full h-48 object-cover rounded border border-gray-700" />
+                  <img src={imageUrl} alt="Preview" className="w-82 h-48 rounded border border-gray-700" />
                 </div>
               )}
             </div>

@@ -1,7 +1,7 @@
 from sqlalchemy import String, Text, DateTime, ForeignKey, Enum as SQLEnum 
 from sqlalchemy.dialects.postgresql import TSVECTOR as TSVector
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-from backend.database import Base
+from database import Base
 from datetime import datetime
 from typing import Optional
 import uuid
@@ -38,8 +38,8 @@ class EdgeType(str, enum.Enum):
 class Edge(Base):
     __tablename__ = "edges"
     id: Mapped[str] = mapped_column(String, primary_key=True, default=lambda: str(uuid.uuid4()))
-    source_id: Mapped[str] = mapped_column(ForeignKey("nodes.id"))
-    target_id: Mapped[str] = mapped_column(ForeignKey("nodes.id"))
+    source_id: Mapped[str] = mapped_column(ForeignKey("nodes.id" , ondelete="CASCADE"))
+    target_id: Mapped[str] = mapped_column(ForeignKey("nodes.id" , ondelete="CASCADE"))
     relation: Mapped[EdgeType] = mapped_column(SQLEnum(EdgeType))
     
     source_node = relationship("Node", foreign_keys=[source_id], back_populates="edges_out")

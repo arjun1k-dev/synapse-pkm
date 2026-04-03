@@ -12,8 +12,10 @@ interface Node {
 }
 
 interface Edge {
+  id:string;
   source_id: string;
   target_id: string;
+  relation:string;
 }
 
 export default function Home() {
@@ -27,7 +29,7 @@ export default function Home() {
     async function fetchNodes() {
       const url = searchTerm 
         ? `http://127.0.0.1:8000/nodes/?q=${encodeURIComponent(searchTerm)}`
-        : 'http://127.0.0.1:8000/nodes/';
+        : 'http://localhost:8000/nodes/';
 
       const res = await fetch(url);
       const data = await res.json();
@@ -38,7 +40,7 @@ export default function Home() {
 
   // 2. Fetch Edges (for "Navigate to Root" logic)
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/edges/')
+    fetch('http://localhost:8000/edges/')
       .then(res => res.json())
       .then(data => setEdges(data));
   }, []);
@@ -57,7 +59,7 @@ export default function Home() {
       }
     } else {
       // Find the Parent Edge
-      const parentEdge = edges.find(edge => edge.target_id === node.id);
+      const parentEdge = edges.find(edge => edge.target_id === node.id && edge.relation === 'PARENT_OF');
       
       if (parentEdge) {
         // Navigate to the Parent
