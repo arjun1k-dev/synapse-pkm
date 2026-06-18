@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+    <defs>
+        <filter id="shadow"><feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000"/></filter>
+        <filter id="neonGlow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+
+    <!-- Outer background -->
+    <rect width="400" height="400" fill="#0a0a14"/>
+
+    <g transform="translate(10,10)">
+        <!-- Hard shadow -->
+        <rect x="8" y="8" width="380" height="360" fill="#000" filter="url(#shadow)"/>
+        <!-- Main card dark with cyan border -->
+        <rect x="0" y="0" width="380" height="360" fill="#11111b" stroke="#00ffff" stroke-width="3">
+            <animate attributeName="stroke-opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+        </rect>
+
+        <!-- Title glitch effect -->
+        <text x="20" y="40" font-family="'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="900" fill="#ff00ff" filter="url(#neonGlow)">WHAT IS SYNAPSE?</text>
+        <text x="20" y="40" font-family="'Helvetica Neue', Arial, sans-serif" font-size="26" font-weight="900" fill="#ffffff" opacity="0.9">WHAT IS SYNAPSE?</text>
+
+        <!-- Descriptive text – now much richer -->
+        <text x="20" y="70" font-family="'Courier New', monospace" font-size="13" fill="#00ffff">Personal Knowledge Management</text>
+        <text x="20" y="90" font-family="'Courier New', monospace" font-size="11" fill="#aaa">system that models information as a</text>
+        <text x="20" y="108" font-family="'Courier New', monospace" font-size="11" fill="#aaa">graph network, not folders.</text>
+
+        <!-- Key concepts -->
+        <text x="20" y="135" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#ff90e8">▸ NODES</text>
+        <text x="30" y="152" font-family="'Courier New', monospace" font-size="10" fill="#999">Every idea, note, or concept is a</text>
+        <text x="30" y="167" font-family="'Courier New', monospace" font-size="10" fill="#999">node – a building block of knowledge.</text>
+
+        <text x="20" y="190" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#4dffff">▸ EDGES</text>
+        <text x="30" y="207" font-family="'Courier New', monospace" font-size="10" fill="#999">Relationships connect nodes: PARENT_OF,</text>
+        <text x="30" y="222" font-family="'Courier New', monospace" font-size="10" fill="#999">REFERENCE, PREREQUISITE, RELATED.</text>
+
+        <text x="20" y="245" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#ffdf00">▸ EMERGENT STRUCTURE</text>
+        <text x="30" y="262" font-family="'Courier New', monospace" font-size="10" fill="#999">The graph mirrors your understanding.</text>
+        <text x="30" y="277" font-family="'Courier New', monospace" font-size="10" fill="#999">No predefined taxonomy – patterns appear.</text>
+
+        <!-- Final line (quote) -->
+        <text x="190" y="310" font-family="'Courier New', monospace" font-size="9" fill="#555" text-anchor="middle" font-style="italic">“The mind is not a vessel to be filled,</text>
+        <text x="190" y="325" font-family="'Courier New', monospace" font-size="9" fill="#555" text-anchor="middle" font-style="italic">but a fire to be kindled.”</text>
+
+        <!-- Animated corner marker -->
+        <circle cx="360" cy="20" r="5" fill="#ff00ff" filter="url(#neonGlow)">
+            <animate attributeName="r" values="5;9;5" dur="1.2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;1;0.8" dur="1.2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Subtle moving scanline inside card -->
+        <rect x="0" y="0" width="380" height="3" fill="#00ffff" opacity="0.15">
+            <animate attributeName="y" values="0;360;0" dur="3.5s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+</svg>

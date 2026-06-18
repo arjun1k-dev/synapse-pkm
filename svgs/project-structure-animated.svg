@@ -1,0 +1,219 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1020" width="100%" height="100%">
+    <defs>
+        <style>
+            @keyframes glow {
+                0%, 100% { filter: drop-shadow(0 0 2px currentColor); }
+                50% { filter: drop-shadow(0 0 8px currentColor); }
+            }
+            .neon-text { animation: glow 2s ease-in-out infinite; }
+        </style>
+    </defs>
+
+    <rect width="1000" height="1020" fill="#0a0a14"/>
+
+    <!-- Title -->
+    <text x="500" y="35" font-family="'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="900" fill="#ff00ff" text-anchor="middle" class="neon-text">PROJECT STRUCTURE</text>
+
+    <!-- Level 0 - Root - Magenta -->
+    <g font-family="'Courier New', monospace" font-size="13" class="neon-text">
+        <text x="50" y="75" fill="#ff00ff">synapse/</text>
+
+        <!-- Level 1 - Direct children of root - Cyan -->
+        <text x="70" y="105" fill="#00ffff" opacity="0">├── backend/
+            <animate attributeName="opacity" values="0;1" dur="0.4s" begin="0.3s" fill="freeze"/>
+        </text>
+
+        <!-- Level 2 - Backend children - Lime Green -->
+        <text x="70" y="130" fill="#39ff14" opacity="0">│   ├── main.py
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="0.7s" fill="freeze"/>
+        </text>
+        <text x="70" y="152" fill="#39ff14" opacity="0">│   ├── models.py
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1s" fill="freeze"/>
+        </text>
+        <text x="70" y="174" fill="#39ff14" opacity="0">│   ├── database.py
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.3s" fill="freeze"/>
+        </text>
+        <text x="70" y="196" fill="#39ff14" opacity="0">│   ├── triggers.py
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.6s" fill="freeze"/>
+        </text>
+        <text x="70" y="218" fill="#39ff14" opacity="0">│   ├── init_db.py
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="1.9s" fill="freeze"/>
+        </text>
+        <text x="70" y="240" fill="#39ff14" opacity="0">│   ├── requirements.txt
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="2.2s" fill="freeze"/>
+        </text>
+        <text x="70" y="262" fill="#39ff14" opacity="0">│   ├── Dockerfile
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="2.5s" fill="freeze"/>
+        </text>
+        <text x="70" y="284" fill="#39ff14" opacity="0">│   └── app/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="2.8s" fill="freeze"/>
+        </text>
+
+        <!-- Level 1 - Frontend - Cyan -->
+        <text x="70" y="314" fill="#00ffff" opacity="0">├── frontend/
+            <animate attributeName="opacity" values="0;1" dur="0.4s" begin="3.1s" fill="freeze"/>
+        </text>
+
+        <!-- Level 2 - Frontend/app - Lime Green -->
+        <text x="70" y="344" fill="#39ff14" opacity="0">│   ├── app/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="3.5s" fill="freeze"/>
+        </text>
+
+        <!-- Level 3 - app children - Orange -->
+        <text x="70" y="368" fill="#ffae00" opacity="0">│   │   ├── page.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="3.9s" fill="freeze"/>
+        </text>
+        <text x="70" y="390" fill="#ffae00" opacity="0">│   │   ├── layout.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.3s" fill="freeze"/>
+        </text>
+        <text x="70" y="412" fill="#ffae00" opacity="0">│   │   ├── map/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="4.7s" fill="freeze"/>
+        </text>
+
+        <!-- Level 4 - map children - Pink -->
+        <text x="70" y="434" fill="#ff69b4" opacity="0">│   │   │   └── page.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="5.1s" fill="freeze"/>
+        </text>
+
+        <!-- Level 3 - watchlist - Orange -->
+        <text x="70" y="456" fill="#ffae00" opacity="0">│   │   ├── watchlist/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="5.5s" fill="freeze"/>
+        </text>
+
+        <!-- Level 4 - watchlist children - Pink -->
+        <text x="70" y="478" fill="#ff69b4" opacity="0">│   │   │   └── page.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="5.9s" fill="freeze"/>
+        </text>
+
+        <!-- Level 3 - subjects - Orange -->
+        <text x="70" y="500" fill="#ffae00" opacity="0">│   │   ├── subjects/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.3s" fill="freeze"/>
+        </text>
+
+        <!-- Level 4 - subjects/[id] - Pink -->
+        <text x="70" y="522" fill="#ff69b4" opacity="0">│   │   │   └── [id]/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="6.7s" fill="freeze"/>
+        </text>
+
+        <!-- Level 5 - [id]/page.tsx - Light Blue -->
+        <text x="70" y="544" fill="#87ceeb" opacity="0">│   │   │    │  └── page.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="7.1s" fill="freeze"/>
+        </text>
+
+        <!-- Level 3 - nodes - Orange -->
+        <text x="70" y="566" fill="#ffae00" opacity="0">│   │   └── nodes/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="7.5s" fill="freeze"/>
+        </text>
+
+        <!-- Level 4 - nodes/[id] - Pink -->
+        <text x="70" y="588" fill="#ff69b4" opacity="0">│   │   │   └── [id]/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="7.9s" fill="freeze"/>
+        </text>
+
+        <!-- Level 5 - [id]/edit - Light Blue -->
+        <text x="70" y="610" fill="#87ceeb" opacity="0">│   │   │   │   └── edit/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="8.3s" fill="freeze"/>
+        </text>
+
+        <!-- Level 6 - edit/page.tsx - Light Green -->
+        <text x="70" y="632" fill="#98fb98" opacity="0">│   │   │    │   │   └── page.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="8.7s" fill="freeze"/>
+        </text>
+
+        <!-- Level 2 - components - Lime Green -->
+        <text x="70" y="654" fill="#39ff14" opacity="0">│   ├── components/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="9.1s" fill="freeze"/>
+        </text>
+
+        <!-- Level 3 - components children - Orange -->
+        <text x="70" y="676" fill="#ffae00" opacity="0">│   │   ├── SearchBar.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="9.5s" fill="freeze"/>
+        </text>
+        <text x="70" y="698" fill="#ffae00" opacity="0">│   │   ├── NodeCard.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="9.9s" fill="freeze"/>
+        </text>
+        <text x="70" y="720" fill="#ffae00" opacity="0">│   │   ├── GraphCanvas.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="10.3s" fill="freeze"/>
+        </text>
+        <text x="70" y="742" fill="#ffae00" opacity="0">│   │   └── VideoCard.tsx
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="10.7s" fill="freeze"/>
+        </text>
+
+        <!-- Level 2 - lib - Lime Green -->
+        <text x="70" y="764" fill="#39ff14" opacity="0">│   ├── lib/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="11.1s" fill="freeze"/>
+        </text>
+
+        <!-- Level 3 - lib children - Orange -->
+        <text x="70" y="786" fill="#ffae00" opacity="0">│   │   └── api.ts
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="11.5s" fill="freeze"/>
+        </text>
+
+        <!-- Level 2 - types - Lime Green -->
+        <text x="70" y="808" fill="#39ff14" opacity="0">│   ├── types/
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="11.9s" fill="freeze"/>
+        </text>
+
+        <!-- Level 3 - types children - Orange -->
+        <text x="70" y="830" fill="#ffae00" opacity="0">│   │   └── index.ts
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="12.3s" fill="freeze"/>
+        </text>
+
+        <!-- Level 2 - frontend config files - Lime Green -->
+        <text x="70" y="852" fill="#39ff14" opacity="0">│   ├── package.json
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="12.7s" fill="freeze"/>
+        </text>
+        <text x="70" y="874" fill="#39ff14" opacity="0">│   ├── tailwind.config.ts
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="13.1s" fill="freeze"/>
+        </text>
+        <text x="70" y="896" fill="#39ff14" opacity="0">│   ├── next.config.js
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="13.5s" fill="freeze"/>
+        </text>
+        <text x="70" y="918" fill="#39ff14" opacity="0">│   └── Dockerfile
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="13.9s" fill="freeze"/>
+        </text>
+
+        <!-- Level 1 - Root config files - Cyan -->
+        <text x="70" y="940" fill="#00ffff" opacity="0">├── docker-compose.yml
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="14.3s" fill="freeze"/>
+        </text>
+        <text x="70" y="962" fill="#00ffff" opacity="0">├── .env.example
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="14.7s" fill="freeze"/>
+        </text>
+        <text x="70" y="984" fill="#00ffff" opacity="0">├── .gitignore
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="15.1s" fill="freeze"/>
+        </text>
+        <text x="70" y="1006" fill="#00ffff" opacity="0">└── README.md
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="15.5s" fill="freeze"/>
+        </text>
+    </g>
+
+    <!-- Legend -->
+    <g font-family="'Courier New', monospace" font-size="11" class="neon-text">
+        <text x="500" y="700" text-anchor="middle" fill="#666" opacity="0">Hierarchy Colors:
+            <animate attributeName="opacity" values="0;1" dur="0.5s" begin="16s" fill="freeze"/>
+        </text>
+
+        <text x="320" y="722" fill="#ff00ff" opacity="0">● Level 0 (Root)
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="16.5s" fill="freeze"/>
+        </text>
+        <text x="430" y="722" fill="#00ffff" opacity="0">● Level 1
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="16.8s" fill="freeze"/>
+        </text>
+        <text x="510" y="722" fill="#39ff14" opacity="0">● Level 2
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="17.1s" fill="freeze"/>
+        </text>
+        <text x="590" y="722" fill="#ffae00" opacity="0">● Level 3
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="17.4s" fill="freeze"/>
+        </text>
+        <text x="670" y="722" fill="#ff69b4" opacity="0">● Level 4
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="17.7s" fill="freeze"/>
+        </text>
+        <text x="750" y="722" fill="#87ceeb" opacity="0">● Level 5
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="18s" fill="freeze"/>
+        </text>
+        <text x="830" y="722" fill="#98fb98" opacity="0">● Level 6
+            <animate attributeName="opacity" values="0;1" dur="0.3s" begin="18.3s" fill="freeze"/>
+        </text>
+    </g>
+</svg>

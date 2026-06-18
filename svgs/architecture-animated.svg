@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+    <defs>
+        <filter id="glow-pink"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow-cyan"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+    <rect width="800" height="400" fill="#11111b"/>
+
+    <!-- Client Layer -->
+    <rect x="30" y="30" width="740" height="80" fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.8"/>
+    <text x="400" y="55" font-family="Courier New, monospace" font-size="16" fill="#ff00ff" text-anchor="middle">CLIENT LAYER</text>
+    <rect x="50" y="70" width="180" height="24" fill="#1a1a2e" stroke="#ff00ff"/>
+    <text x="140" y="85" font-family="Courier New" font-size="12" fill="#ff00ff" text-anchor="middle">Next.js (App Router)</text>
+    <rect x="250" y="70" width="160" height="24" fill="#1a1a2e" stroke="#ff00ff"/>
+    <text x="330" y="85" font-family="Courier New" font-size="12" fill="#ff00ff" text-anchor="middle">React Flow (Graph UI)</text>
+    <rect x="430" y="70" width="140" height="24" fill="#1a1a2e" stroke="#ff00ff"/>
+    <text x="500" y="85" font-family="Courier New" font-size="12" fill="#ff00ff" text-anchor="middle">Tailwind CSS</text>
+
+    <!-- Arrow Client→App -->
+    <line x1="400" y1="110" x2="400" y2="150" stroke="#00ffff" stroke-width="2">
+        <animate attributeName="y2" values="110;150;110" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="400" cy="110" r="3" fill="#00ffff">
+        <animate attributeName="cy" values="110;150;110" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Application Layer -->
+    <rect x="30" y="160" width="740" height="80" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.8"/>
+    <text x="400" y="185" font-family="Courier New, monospace" font-size="16" fill="#00ffff" text-anchor="middle">APPLICATION LAYER</text>
+    <rect x="50" y="200" width="200" height="24" fill="#1a1a2e" stroke="#00ffff"/>
+    <text x="150" y="215" font-family="Courier New" font-size="12" fill="#00ffff" text-anchor="middle">FastAPI (async Python)</text>
+    <rect x="270" y="200" width="160" height="24" fill="#1a1a2e" stroke="#00ffff"/>
+    <text x="350" y="215" font-family="Courier New" font-size="12" fill="#00ffff" text-anchor="middle">Pydantic Validation</text>
+    <rect x="450" y="200" width="140" height="24" fill="#1a1a2e" stroke="#00ffff"/>
+    <text x="520" y="215" font-family="Courier New" font-size="12" fill="#00ffff" text-anchor="middle">CORS Middleware</text>
+
+    <!-- Arrow App→Data -->
+    <line x1="400" y1="240" x2="400" y2="280" stroke="#ff00ff" stroke-width="2">
+        <animate attributeName="y2" values="240;280;240" dur="1.5s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="400" cy="240" r="3" fill="#ff00ff">
+        <animate attributeName="cy" values="240;280;240" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Data Layer -->
+    <rect x="30" y="290" width="740" height="80" fill="none" stroke="#ffdf00" stroke-width="2" opacity="0.8"/>
+    <text x="400" y="315" font-family="Courier New, monospace" font-size="16" fill="#ffdf00" text-anchor="middle">DATA LAYER (PostgreSQL 15)</text>
+    <rect x="50" y="330" width="180" height="24" fill="#1a1a2e" stroke="#ffdf00"/>
+    <text x="140" y="345" font-family="Courier New" font-size="12" fill="#ffdf00" text-anchor="middle">Nodes Table</text>
+    <rect x="250" y="330" width="180" height="24" fill="#1a1a2e" stroke="#ffdf00"/>
+    <text x="340" y="345" font-family="Courier New" font-size="12" fill="#ffdf00" text-anchor="middle">Edges Table</text>
+    <rect x="450" y="330" width="180" height="24" fill="#1a1a2e" stroke="#ffdf00"/>
+    <text x="540" y="345" font-family="Courier New" font-size="12" fill="#ffdf00" text-anchor="middle">TSVector GIN Index</text>
+</svg>

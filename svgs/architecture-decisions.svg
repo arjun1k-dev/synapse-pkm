@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+    <defs>
+        <filter id="shadow"><feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000"/></filter>
+    </defs>
+    <rect width="400" height="400" fill="#0a0a14"/>
+    <g transform="translate(10,10)">
+        <rect x="8" y="8" width="380" height="360" fill="#000" filter="url(#shadow)"/>
+        <rect x="0" y="0" width="380" height="360" fill="#11111b" stroke="#ff90e8" stroke-width="3">
+            <animate attributeName="stroke-opacity" values="1;0.6;1" dur="2.3s" repeatCount="indefinite"/>
+        </rect>
+
+        <text x="190" y="30" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="900" fill="#ff90e8" text-anchor="middle">ARCHITECTURAL DECISIONS</text>
+
+        <!-- Table headers -->
+        <line x1="20" y1="45" x2="360" y2="45" stroke="#444" stroke-width="1"/>
+        <text x="30" y="65" font-family="Courier New, monospace" font-size="11" font-weight="bold" fill="#ff90e8">DECISION</text>
+        <text x="175" y="65" font-family="Courier New, monospace" font-size="11" font-weight="bold" fill="#ff90e8">RATIONALE</text>
+
+        <!-- Row 1 -->
+        <line x1="20" y1="75" x2="360" y2="75" stroke="#333" stroke-width="0.5"/>
+        <text x="30" y="95" font-family="Courier New, monospace" font-size="10" fill="#00ffff">Monorepo over</text>
+        <text x="30" y="110" font-family="Courier New, monospace" font-size="10" fill="#00ffff">Microservices</text>
+        <text x="175" y="95" font-family="Courier New, monospace" font-size="9" fill="#aaa">V1 velocity: atomic commits</text>
+        <text x="175" y="110" font-family="Courier New, monospace" font-size="9" fill="#aaa">frontend/backend; K8s deferred.</text>
+
+        <!-- Row 2 -->
+        <line x1="20" y1="120" x2="360" y2="120" stroke="#333" stroke-width="0.5"/>
+        <text x="30" y="140" font-family="Courier New, monospace" font-size="10" fill="#ffdf00">SQL (Postgres)</text>
+        <text x="30" y="155" font-family="Courier New, monospace" font-size="10" fill="#ffdf00">over NoSQL</text>
+        <text x="175" y="140" font-family="Courier New, monospace" font-size="9" fill="#aaa">Knowledge is relational;</text>
+        <text x="175" y="155" font-family="Courier New, monospace" font-size="9" fill="#aaa">graph traversals in SQL efficient.</text>
+
+        <!-- Row 3 -->
+        <line x1="20" y1="165" x2="360" y2="165" stroke="#333" stroke-width="0.5"/>
+        <text x="30" y="185" font-family="Courier New, monospace" font-size="10" fill="#4dffff">Server-Side</text>
+        <text x="30" y="200" font-family="Courier New, monospace" font-size="10" fill="#4dffff">Search</text>
+        <text x="175" y="185" font-family="Courier New, monospace" font-size="9" fill="#aaa">No dataset download; FTS</text>
+        <text x="175" y="200" font-family="Courier New, monospace" font-size="9" fill="#aaa">with GIN scales to millions.</text>
+
+        <!-- Row 4 -->
+        <line x1="20" y1="210" x2="360" y2="210" stroke="#333" stroke-width="0.5"/>
+        <text x="30" y="230" font-family="Courier New, monospace" font-size="10" fill="#ff00ff">ASGI/Async</text>
+        <text x="30" y="245" font-family="Courier New, monospace" font-size="10" fill="#ff00ff">over WSGI/Sync</text>
+        <text x="175" y="230" font-family="Courier New, monospace" font-size="9" fill="#aaa">Non-blocking DB queries;</text>
+        <text x="175" y="245" font-family="Courier New, monospace" font-size="9" fill="#aaa">essential for concurrent graph ops.</text>
+
+        <!-- Footer pulse dot -->
+        <circle cx="370" cy="350" r="4" fill="#00ffff">
+            <animate attributeName="r" values="4;7;4" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+
+        <rect x="0" y="0" width="380" height="2" fill="#00ffff" opacity="0.1">
+            <animate attributeName="y" values="0;360;0" dur="4s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+</svg>

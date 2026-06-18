@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 60" width="100%" height="100%">
+    <rect width="800" height="60" fill="#11111b"/>
+    <text x="400" y="25" font-family="'Courier New', monospace" font-size="14" fill="#666" text-anchor="middle">MIT Licensed | Built by arjun1k-dev</text>
+    <text x="400" y="45" font-family="'Courier New', monospace" font-size="10" fill="#444" text-anchor="middle">"The mind is not a vessel to be filled, but a fire to be kindled."</text>
+    <circle cx="780" cy="15" r="4" fill="#00ffcc">
+        <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite"/>
+    </circle>
+</svg>

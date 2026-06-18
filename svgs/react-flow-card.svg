@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 200" width="100%" height="100%">
+    <defs>
+        <filter id="shadow"><feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000"/></filter>
+    </defs>
+    <rect width="380" height="200" fill="#0a0a14"/>
+    <g transform="translate(10,10)">
+        <rect x="6" y="6" width="360" height="180" fill="#000" filter="url(#shadow)"/>
+        <rect x="0" y="0" width="360" height="180" fill="#1a1a2e" stroke="#4dffff" stroke-width="3"/>
+        <text x="20" y="35" font-family="'Helvetica Neue', Arial, sans-serif" font-size="22" font-weight="900" fill="#4dffff">React Flow</text>
+        <text x="20" y="60" font-family="'Courier New', monospace" font-size="13" fill="#ccc">Interactive Graph Visualisation</text>
+        <text x="20" y="85" font-family="'Courier New', monospace" font-size="11" fill="#999">• HTML5 Canvas rendering</text>
+        <text x="20" y="105" font-family="'Courier New', monospace" font-size="11" fill="#999">• 1000+ nodes smoothly</text>
+        <text x="20" y="125" font-family="'Courier New', monospace" font-size="11" fill="#999">• Drag‑to‑connect edges</text>
+        <text x="20" y="145" font-family="'Courier New', monospace" font-size="11" fill="#999">• Custom node components</text>
+        <animateTransform attributeName="transform" type="translate" values="0,0; -3,-3; 0,0" dur="1.3s" repeatCount="indefinite"/>
+    </g>
+</svg>

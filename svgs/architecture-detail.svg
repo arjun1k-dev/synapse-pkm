@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+    <defs>
+        <filter id="shadow"><feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000"/></filter>
+        <filter id="cyanGlow"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="pinkGlow"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="yellowGlow"><feGaussianBlur stdDeviation="2"/><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    </defs>
+
+    <rect width="400" height="400" fill="#0a0a14"/>
+
+    <g transform="translate(10,10)">
+        <!-- Hard shadow + card -->
+        <rect x="8" y="8" width="380" height="360" fill="#000" filter="url(#shadow)"/>
+        <rect x="0" y="0" width="380" height="360" fill="#11111b" stroke="#00ffff" stroke-width="3">
+            <animate attributeName="stroke-opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+        </rect>
+
+        <!-- Title -->
+        <text x="190" y="30" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="900" fill="#ff00ff" text-anchor="middle">LAYERED ARCHITECTURE</text>
+
+        <!-- Client Layer -->
+        <rect x="20" y="50" width="340" height="80" fill="none" stroke="#ff00ff" stroke-width="2" opacity="0.8"/>
+        <text x="190" y="70" font-family="Courier New, monospace" font-size="14" fill="#ff00ff" text-anchor="middle">CLIENT LAYER</text>
+        <rect x="30" y="85" width="120" height="20" fill="#1a1a2e" stroke="#ff00ff" stroke-width="1"/>
+        <text x="90" y="98" font-family="Courier New" font-size="10" fill="#ff00ff" text-anchor="middle">Next.js (App Router)</text>
+        <rect x="160" y="85" width="110" height="20" fill="#1a1a2e" stroke="#ff00ff" stroke-width="1"/>
+        <text x="215" y="98" font-family="Courier New" font-size="10" fill="#ff00ff" text-anchor="middle">React Flow (Graph)</text>
+        <rect x="280" y="85" width="70" height="20" fill="#1a1a2e" stroke="#ff00ff" stroke-width="1"/>
+        <text x="315" y="98" font-family="Courier New" font-size="10" fill="#ff00ff" text-anchor="middle">Tailwind</text>
+
+        <!-- Arrow Client→App with moving dot -->
+        <line x1="190" y1="130" x2="190" y2="155" stroke="#00ffff" stroke-width="2">
+            <animate attributeName="y2" values="130;155;130" dur="1.5s" repeatCount="indefinite"/>
+        </line>
+        <circle cx="190" cy="130" r="3" fill="#00ffff">
+            <animate attributeName="cy" values="130;155;130" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Application Layer -->
+        <rect x="20" y="165" width="340" height="80" fill="none" stroke="#00ffff" stroke-width="2" opacity="0.8"/>
+        <text x="190" y="185" font-family="Courier New, monospace" font-size="14" fill="#00ffff" text-anchor="middle">APPLICATION LAYER</text>
+        <rect x="30" y="200" width="140" height="20" fill="#1a1a2e" stroke="#00ffff" stroke-width="1"/>
+        <text x="100" y="213" font-family="Courier New" font-size="10" fill="#00ffff" text-anchor="middle">FastAPI (async Python)</text>
+        <rect x="180" y="200" width="100" height="20" fill="#1a1a2e" stroke="#00ffff" stroke-width="1"/>
+        <text x="230" y="213" font-family="Courier New" font-size="10" fill="#00ffff" text-anchor="middle">Pydantic Validation</text>
+        <rect x="290" y="200" width="60" height="20" fill="#1a1a2e" stroke="#00ffff" stroke-width="1"/>
+        <text x="320" y="213" font-family="Courier New" font-size="10" fill="#00ffff" text-anchor="middle">CORS</text>
+
+        <!-- Arrow App→Data -->
+        <line x1="190" y1="245" x2="190" y2="270" stroke="#ffdf00" stroke-width="2">
+            <animate attributeName="y2" values="245;270;245" dur="1.5s" repeatCount="indefinite"/>
+        </line>
+        <circle cx="190" cy="245" r="3" fill="#ffdf00">
+            <animate attributeName="cy" values="245;270;245" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Data Layer -->
+        <rect x="20" y="280" width="340" height="60" fill="none" stroke="#ffdf00" stroke-width="2" opacity="0.8"/>
+        <text x="190" y="300" font-family="Courier New, monospace" font-size="14" fill="#ffdf00" text-anchor="middle">DATA LAYER (PostgreSQL 15)</text>
+        <rect x="30" y="310" width="100" height="18" fill="#1a1a2e" stroke="#ffdf00" stroke-width="1"/>
+        <text x="80" y="322" font-family="Courier New" font-size="9" fill="#ffdf00" text-anchor="middle">Nodes Table</text>
+        <rect x="140" y="310" width="90" height="18" fill="#1a1a2e" stroke="#ffdf00" stroke-width="1"/>
+        <text x="185" y="322" font-family="Courier New" font-size="9" fill="#ffdf00" text-anchor="middle">Edges Table</text>
+        <rect x="240" y="310" width="110" height="18" fill="#1a1a2e" stroke="#ffdf00" stroke-width="1"/>
+        <text x="295" y="322" font-family="Courier New" font-size="9" fill="#ffdf00" text-anchor="middle">TSVector Search</text>
+
+        <!-- Scanline -->
+        <rect x="0" y="0" width="380" height="2" fill="#00ffff" opacity="0.15">
+            <animate attributeName="y" values="0;360;0" dur="4s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+</svg>

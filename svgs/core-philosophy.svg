@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+    <defs>
+        <filter id="shadow"><feDropShadow dx="6" dy="6" stdDeviation="0" flood-color="#000"/></filter>
+        <filter id="cyanGlow">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="pinkGlow">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="yellowGlow">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+
+    <!-- Dark outer background -->
+    <rect width="400" height="400" fill="#0a0a14"/>
+
+    <!-- Glowy bordered card container -->
+    <g transform="translate(10,10)">
+        <!-- Hard shadow -->
+        <rect x="8" y="8" width="380" height="360" fill="#000" filter="url(#shadow)"/>
+        <!-- Main dark card with breathing cyan border -->
+        <rect x="0" y="0" width="380" height="360" fill="#11111b" stroke="#00ffff" stroke-width="3">
+            <animate attributeName="stroke-opacity" values="1;0.6;1" dur="2s" repeatCount="indefinite"/>
+        </rect>
+
+        <!-- ===== TOP SECTION: HIERARCHY (FOLDER TREE) ===== -->
+        <text x="15" y="30" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#ff00ff">FOLDER HIERARCHY</text>
+
+        <!-- Tree lines (grey) -->
+        <g stroke="#555" stroke-width="1.5" fill="none">
+            <line x1="30" y1="50" x2="30" y2="120"/>
+            <line x1="30" y1="75" x2="50" y2="75"/>
+            <line x1="50" y1="75" x2="50" y2="100"/>
+            <line x1="50" y1="100" x2="70" y2="100"/>
+        </g>
+
+        <!-- Hierarchy text -->
+        <g font-family="'Courier New', monospace" font-size="11" fill="#888">
+            <text x="25" y="48">📁 Engineering</text>
+            <text x="55" y="68">📁 CS</text>
+            <text x="75" y="93">📁 Algorithms</text>
+            <text x="95" y="118">📄 Sorting.md</text>
+        </g>
+
+        <!-- Divider line -->
+        <line x1="20" y1="135" x2="360" y2="135" stroke="#333" stroke-width="1" stroke-dasharray="4,4"/>
+
+        <!-- ===== BOTTOM SECTION: SYNAPSE GRAPH ===== -->
+        <text x="15" y="165" font-family="'Courier New', monospace" font-size="13" font-weight="bold" fill="#00ffff">SYNAPSE GRAPH</text>
+
+        <!-- Central node: Algorithms (pulsing) -->
+        <circle cx="190" cy="230" r="6" fill="#4dffff" filter="url(#cyanGlow)">
+            <animate attributeName="r" values="6;9;6" dur="1.8s" repeatCount="indefinite"/>
+        </circle>
+        <text x="220" y="233" font-family="'Courier New', monospace" font-size="11" fill="#4dffff">Algorithms</text>
+
+        <!-- Connected nodes -->
+        <g font-family="'Courier New', monospace" font-size="10">
+            <!-- Sorting (bottom left) -->
+            <circle cx="80" cy="290" r="4" fill="#ff90e8" filter="url(#pinkGlow)">
+                <animate attributeName="r" values="4;7;4" dur="1.2s" repeatCount="indefinite"/>
+            </circle>
+            <text x="90" y="293" fill="#ff90e8">Sorting</text>
+
+            <!-- Data Structures (top right) -->
+            <circle cx="300" cy="190" r="4" fill="#ffdf00" filter="url(#yellowGlow)">
+                <animate attributeName="r" values="4;7;4" dur="1.5s" repeatCount="indefinite"/>
+            </circle>
+            <text x="258" y="177" fill="#ffdf00">Data Structures</text>
+
+            <!-- Big O (bottom right) -->
+            <circle cx="310" cy="280" r="4" fill="#ff90e8" filter="url(#pinkGlow)">
+                <animate attributeName="r" values="4;7;4" dur="1.7s" repeatCount="indefinite"/>
+            </circle>
+            <text x="318" y="283" fill="#ff90e8">Big O</text>
+
+            <!-- Recursion (top left) -->
+            <circle cx="70" cy="190" r="4" fill="#4dffff" filter="url(#cyanGlow)">
+                <animate attributeName="r" values="4;7;4" dur="1.4s" repeatCount="indefinite"/>
+            </circle>
+            <text x="80" y="210" fill="#4dffff" text-anchor="end">Recursion</text>
+        </g>
+
+        <!-- Edges with moving dots -->
+        <!-- Edge: Algorithms -> Sorting -->
+        <line x1="190" y1="230" x2="80" y2="290" stroke="#ff90e8" stroke-width="1.5" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="1.2s" repeatCount="indefinite"/>
+        </line>
+        <circle r="2.5" fill="#ff90e8">
+            <animateMotion dur="1.5s" repeatCount="indefinite" path="M190,230 L80,290"/>
+        </circle>
+
+        <!-- Edge: Algorithms -> Data Structures -->
+        <line x1="190" y1="230" x2="300" y2="190" stroke="#ffdf00" stroke-width="1.5" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite"/>
+        </line>
+        <circle r="2.5" fill="#ffdf00">
+            <animateMotion dur="1.8s" repeatCount="indefinite" path="M190,230 L300,190"/>
+        </circle>
+
+        <!-- Edge: Algorithms -> Big O -->
+        <line x1="190" y1="230" x2="310" y2="280" stroke="#ff90e8" stroke-width="1.5" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="1.7s" repeatCount="indefinite"/>
+        </line>
+        <circle r="2.5" fill="#ff90e8">
+            <animateMotion dur="2.0s" repeatCount="indefinite" path="M190,230 L310,280"/>
+        </circle>
+
+        <!-- Edge: Algorithms -> Recursion -->
+        <line x1="190" y1="230" x2="70" y2="190" stroke="#4dffff" stroke-width="1.5" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="1.4s" repeatCount="indefinite"/>
+        </line>
+        <circle r="2.5" fill="#4dffff">
+            <animateMotion dur="1.6s" repeatCount="indefinite" path="M190,230 L70,190"/>
+        </circle>
+
+        <!-- Cross-edge: Sorting <-> Data Structures (lateral) -->
+        <line x1="80" y1="290" x2="300" y2="190" stroke="#ffdf00" stroke-width="1" opacity="0.3" stroke-dasharray="3,3">
+            <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2.5s" repeatCount="indefinite"/>
+        </line>
+        <circle r="2" fill="#ffdf00">
+            <animateMotion dur="3s" repeatCount="indefinite" path="M80,290 L300,190"/>
+        </circle>
+
+        <!-- Subtle moving scanline inside the card -->
+        <rect x="0" y="0" width="380" height="2" fill="#00ffff" opacity="0.15">
+            <animate attributeName="y" values="0;360;0" dur="4s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+</svg>
