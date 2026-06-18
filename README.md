@@ -274,8 +274,8 @@ git --version
 #### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/SkyArjun99/synapse.git
-cd synapse
+git clone https://github.com/arjun1k-dev/synapse-pkm.git
+cd synapse-pkm-pkm
 ```
 
 **What you're getting:**
@@ -722,7 +722,7 @@ python main.py  # or uvicorn main:app
 
 **Correct:**
 ```bash
-# From project root (synapse/)
+# From project root (synapse-pkm/)
 uvicorn backend.main:app --reload
 ```
 
@@ -739,12 +739,12 @@ We welcome contributions from developers of all levels. Whether it's bug fixes, 
 1. **Fork the repository** on GitHub
 2. **Clone your fork:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/synapse.git
-   cd synapse
+   git clone https://github.com/arjun1k-dev/synapse-pkm.git
+   cd synapse-pkm-pkm
    ```
 3. **Add upstream remote:**
    ```bash
-   git remote add upstream https://github.com/SkyArjun99/synapse.git
+   git remote add upstream https://github.com/arjun1k-dev/synapse-pkm.git
    ```
 
 ### Development Workflow
@@ -875,7 +875,7 @@ Synapse is released under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2026 SkyArjun99
+Copyright (c) 2026 arjun1k-dev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -910,7 +910,7 @@ SOFTWARE.
 
 ---
 
-**Built with ❤️ by [SkyArjun99](https://github.com/SkyArjun99)**
+**Built with ❤️ by [arjun1k-dev](https://github.com/arjun1k-dev)**
 
 > *"The mind is not a vessel to be filled, but a fire to be kindled — and fires spread through connections."*
 ```
