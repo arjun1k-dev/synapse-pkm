@@ -16,7 +16,7 @@
 
     <!-- Level 0 - Root - Magenta -->
     <g font-family="'Courier New', monospace" font-size="13" class="neon-text">
-        <text x="50" y="75" fill="#ff00ff">synapse/</text>
+        <text x="50" y="75" fill="#ff00ff">synapse-pkm/</text>
 
         <!-- Level 1 - Direct children of root - Cyan -->
         <text x="70" y="105" fill="#00ffff" opacity="0">├── backend/
