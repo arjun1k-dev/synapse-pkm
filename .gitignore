@@ -3,7 +3,8 @@ __pycache__/
 *.py[cod]
 venv/
 .venv
-
+.idea
+.claude
 # Environment
 .env
 
