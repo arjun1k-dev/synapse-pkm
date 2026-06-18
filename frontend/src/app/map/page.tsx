@@ -70,7 +70,7 @@ export default function MapView() {
       setLoading(false);
     }
     loadData();
-  }, []);
+  }, );
 
   // 6. Handle connecting nodes on the map
   const onConnect = useCallback(async (params: Connection) => {
