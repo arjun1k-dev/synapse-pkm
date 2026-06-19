@@ -175,8 +175,6 @@ pnpm dev
   <img src="./svgs/troubleshooting-divider.svg" width="100%" alt="Troubleshooting"/>
 </div>
 
-*All troubleshooting steps remain as text, e.g.:*
-
 **Port Already in Use**
 ```bash
 sudo systemctl stop postgresql
