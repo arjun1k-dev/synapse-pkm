@@ -57,8 +57,6 @@
 <!-- Keep the plain text for the graph explanation, no huge SVG needed here -->
 > **Synapse** treats every piece of knowledge as a **Node** that can connect to any other node through **Edges**. This mirrors how human cognition works — through associative connections.
 
-<
-
 <br/>
 
 <div align="center">
